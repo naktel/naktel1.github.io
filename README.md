@@ -1,1 +1,0 @@
-# naktel1.github.io

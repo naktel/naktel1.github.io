@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="utf-8">
+    <meta id="Viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="msvalidate.01" content="39F511EB558CF839342A6ACFEC1E99EA" />
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"c625dd2f80",applicationID:"124669967"};window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var i=e[t]={exports:{}};n[t][0].call(i.exports,function(e){var i=n[t][1][e];return r(i||e)},i,i.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<t.length;i++)r(t[i]);return r}({1:[function(n,e,t){function r(){}function i(n,e,t){return function(){return o(n,[u.now()].concat(f(arguments)),e?null:this,t),e?void 0:this}}var o=n("handle"),a=n(4),f=n(5),c=n("ee").get("tracer"),u=n("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(n,e){s[e]=i(d+e,!0,"api")}),s.addPageAction=i(d+"addPageAction",!0),s.setCurrentRouteName=i(d+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(n,e){var t={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),n,t],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],t),i)try{return e.apply(this,arguments)}catch(n){throw c.emit("fn-err",[arguments,this,n],t),n}finally{c.emit("fn-end",[u.now()],t)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(n,e){m[e]=i(l+e)}),newrelic.noticeError=function(n,e){"string"==typeof n&&(n=new Error(n)),o("err",[n,u.now(),!1,e])}},{}],2:[function(n,e,t){function r(n,e){var t=n.getEntries();t.forEach(function(n){"first-paint"===n.name?a("timing",["fp",Math.floor(n.startTime)]):"first-contentful-paint"===n.name&&a("timing",["fcp",Math.floor(n.startTime)])})}function i(n){if(n instanceof c&&!s){var e,t=Math.round(n.timeStamp);e=t>1e12?Date.now()-t:f.now()-t,s=!0,a("timing",["fi",t,{type:n.type,fid:e}])}}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var o,a=n("handle"),f=n("loader"),c=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){o=new PerformanceObserver(r);try{o.observe({entryTypes:["paint"]})}catch(u){}}if("addEventListener"in document){var s=!1,p=["click","keydown","mousedown","pointerdown","touchstart"];p.forEach(function(n){document.addEventListener(n,i,!1)})}}},{}],3:[function(n,e,t){function r(n,e){if(!i)return!1;if(n!==i)return!1;if(!e)return!0;if(!o)return!1;for(var t=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==t[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],4:[function(n,e,t){function r(n,e){var t=[],r="",o=0;for(r in n)i.call(n,r)&&(t[o]=e(r,n[r]),o+=1);return t}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],5:[function(n,e,t){function r(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,i=t-e||0,o=Array(i<0?0:i);++r<i;)o[r]=n[e+r];return o}e.exports=r},{}],6:[function(n,e,t){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(n,e,t){function r(){}function i(n){function e(n){return n&&n instanceof r?n:n?c(n,f,o):o()}function t(t,r,i,o){if(!d.aborted||o){n&&n(t,r,i);for(var a=e(i),f=v(t),c=f.length,u=0;u<c;u++)f[u].apply(a,r);var p=s[y[t]];return p&&p.push([b,t,r,a]),a}}function l(n,e){h[n]=v(n).concat(e)}function m(n,e){var t=h[n];if(t)for(var r=0;r<t.length;r++)t[r]===e&&t.splice(r,1)}function v(n){return h[n]||[]}function g(n){return p[n]=p[n]||i(t)}function w(n,e){u(n,function(n,t){e=e||"feature",y[t]=e,e in s||(s[e]=[])})}var h={},y={},b={on:l,addEventListener:l,removeEventListener:m,emit:t,get:g,listeners:v,context:e,buffer:w,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var f="nr@context",c=n("gos"),u=n(4),s={},p={},d=e.exports=i();d.backlog=s},{}],gos:[function(n,e,t){function r(n,e,t){if(i.call(n,e))return n[e];var r=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return n[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(n,e,t){function r(n,e,t,r){i.buffer([n],r),i.emit(n,e,t)}var i=n("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(n,e,t){function r(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:a(n,o,function(){return i++})}var i=1,o="nr@id",a=n("gos");e.exports=r},{}],loader:[function(n,e,t){function r(){if(!x++){var n=E.info=NREUM.info,e=l.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(n&&n.licenseKey&&n.applicationID&&e))return s.abort();u(y,function(e,t){n[e]||(n[e]=t)}),c("mark",["onload",a()+E.offset],null,"api");var t=l.createElement("script");t.src="https://"+n.agent,e.parentNode.insertBefore(t,e)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+E.offset],null,"api")}function a(){return O.exists&&performance.now?Math.round(performance.now()):(f=Math.max((new Date).getTime(),f))-E.offset}var f=(new Date).getTime(),c=n("handle"),u=n(4),s=n("ee"),p=n(3),d=window,l=d.document,m="addEventListener",v="attachEvent",g=d.XMLHttpRequest,w=g&&g.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:g,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var h=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1153.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),E=e.exports={offset:f,now:a,origin:h,features:{},xhrWrappable:b,userAgent:p};n(1),n(2),l[m]?(l[m]("DOMContentLoaded",o,!1),d[m]("load",r,!1)):(l[v]("onreadystatechange",i),d[v]("onload",r)),c("mark",["firstbyte",f],null,"api");var x=0,O=n(6)},{}],"wrap-function":[function(n,e,t){function r(n){return!(n&&n instanceof Function&&n.apply&&!n[a])}var i=n("ee"),o=n(5),a="nr@original",f=Object.prototype.hasOwnProperty,c=!1;e.exports=function(n,e){function t(n,e,t,i){function nrWrapper(){var r,a,f,c;try{a=this,r=o(arguments),f="function"==typeof t?t(r,a):t||{}}catch(u){d([u,"",[r,a,i],f])}s(e+"start",[r,a,i],f);try{return c=n.apply(a,r)}catch(p){throw s(e+"err",[r,a,p],f),p}finally{s(e+"end",[r,a,c],f)}}return r(n)?n:(e||(e=""),nrWrapper[a]=n,p(n,nrWrapper),nrWrapper)}function u(n,e,i,o){i||(i="");var a,f,c,u="-"===i.charAt(0);for(c=0;c<e.length;c++)f=e[c],a=n[f],r(a)||(n[f]=t(a,u?f+i:i,o,f))}function s(t,r,i){if(!c||e){var o=c;c=!0;try{n.emit(t,r,i,e)}catch(a){d([a,t,r,i])}c=o}}function p(n,e){if(Object.defineProperty&&Object.keys)try{var t=Object.keys(n);return t.forEach(function(t){Object.defineProperty(e,t,{get:function(){return n[t]},set:function(e){return n[t]=e,e}})}),e}catch(r){d([r])}for(var i in n)f.call(n,i)&&(e[i]=n[i]);return e}function d(e){try{n.emit("internal-error",e)}catch(t){}}return n||(n=i),t.inPlace=u,t.flag=a,t}},{}]},{},["loader"]);</script><![endif]-->
+    <title>Оформіть моментально позику онлайн на карту | ukrpozyka</title>    <meta name="description" content="&#x041F;&#x0435;&#x0440;&#x0448;&#x0430;&#x20;&#x043F;&#x043E;&#x0437;&#x0438;&#x043A;&#x0430;&#x20;&#x2013;&#x20;&#x0434;&#x043E;&#x20;10&#x20;000&#x20;&#x0433;&#x0440;&#x0438;&#x0432;&#x0435;&#x043D;&#x044C;&#x20;&#x043F;&#x0456;&#x0434;&#x20;0&#x25;.&#x20;&#x041E;&#x0444;&#x043E;&#x0440;&#x043C;&#x0456;&#x0442;&#x044C;&#x20;&#x043E;&#x043D;&#x043B;&#x0430;&#x0439;&#x043D;-&#x0437;&#x0430;&#x044F;&#x0432;&#x043A;&#x0443;&#x20;&#x0456;&#x20;&#x043E;&#x0442;&#x0440;&#x0438;&#x043C;&#x0430;&#x0439;&#x0442;&#x0435;&#x20;&#x043A;&#x043E;&#x0448;&#x0442;&#x0438;&#x20;&#x043D;&#x0430;&#x20;&#x043A;&#x0430;&#x0440;&#x0442;&#x0443;&#x21;&#x20;&#x0411;&#x0435;&#x0437;&#x20;&#x043F;&#x043E;&#x0440;&#x0443;&#x0447;&#x0438;&#x0442;&#x0435;&#x043B;&#x0456;&#x0432;&#x20;&#x0456;&#x20;&#x0437;&#x0430;&#x0441;&#x0442;&#x0430;&#x0432;&#x0438;.">
+<meta name="keywords" content="&#x041F;&#x043E;&#x0437;&#x0438;&#x043A;&#x0430;,&#x20;&#x0448;&#x0432;&#x0438;&#x0434;&#x043A;&#x0430;&#x20;&#x043F;&#x043E;&#x0437;&#x0438;&#x043A;&#x0430;,&#x20;&#x043A;&#x0440;&#x0435;&#x0434;&#x0438;&#x0442;,&#x20;&#x0448;&#x0432;&#x0438;&#x0434;&#x043A;&#x0438;&#x0439;&#x20;&#x043A;&#x0440;&#x0435;&#x0434;&#x0438;&#x0442;,&#x20;&#x043A;&#x0440;&#x0435;&#x0434;&#x0438;&#x0442;&#x20;&#x0437;&#x20;&#x043F;&#x0430;&#x0441;&#x043F;&#x043E;&#x0440;&#x0442;&#x043E;&#x043C;,&#x20;&#x043A;&#x0440;&#x0435;&#x0434;&#x0438;&#x0442;&#x20;&#x043E;&#x043D;&#x043B;&#x0430;&#x0439;&#x043D;">    <meta name="google-site-verification" content="" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+                            <link rel="alternate" hreflang="uk" href="https://ukrpozyka.com.ua/">
+                        <link rel="alternate" hreflang="ru" href="https://ukrpozyka.com.ua/ru/">
+                        <link rel="alternate" hreflang="x-default" href="https://ukrpozyka.com.ua/ru/">
+        <meta name="theme-color" content="#ffffff">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <link href="&#x2F;cache&#x2F;8c2af01e2f36d14365809334230d824a.min.css&#x3F;t&#x3D;1576169365&amp;v&#x3D;293" media="all" rel="stylesheet" type="text&#x2F;css">
+    <script type="text&#x2F;javascript" data-cid="1366649642" async="async" src="https&#x3A;&#x2F;&#x2F;dlqe6njq49pwj.cloudfront.net&#x2F;fp&#x2F;Scripts&#x2F;ffp-aws.js"></script>
+    <script src="//use.typekit.net/egl5xoj.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+
+
+ga('create', 'UA-104773793-6', 'auto', {'allowLinker': true});
+function parse_query_string(query) {
+  var vars = query.split("&");
+  var query_string = {};
+  for (var i = 0; i < vars.length; i++) {
+    var pair = vars[i].split("=");
+    var key = decodeURIComponent(pair[0]);
+    var value = decodeURIComponent(pair[1]);
+    // If first entry with this name
+    if (typeof query_string[key] === "undefined") {
+      query_string[key] = decodeURIComponent(value);
+      // If second entry with this name
+    } else if (typeof query_string[key] === "string") {
+      var arr = [query_string[key], decodeURIComponent(value)];
+      query_string[key] = arr;
+      // If third or later entry with this name
+    } else {
+      query_string[key].push(decodeURIComponent(value));
+    }
+  }
+  return query_string;
+}
+
+
+
+var query = window.location.search.substring(1);
+var qs = parse_query_string(query);
+console.log("source is "+qs.utm_source);
+console.log("medium is "+qs.utm_medium);
+console.log("campaign is "+qs.utm_campaign);
+
+
+if(qs.utm_medium === "affiliate") { 
+	if(qs.wm_id != null) {
+		var wmid = qs.wm_id;
+	} else if (qs.affiliate_id != null ) {
+		var wmid = qs.affiliate_id;
+	} else if (qs.AffiliateID != null ) {
+		var wmid = qs.AffiliateID;
+	} else if (qs.utm_term != null && qs.utm_source == "doaff" ) {
+		var wmid = qs.utm_term;
+	} else if (qs.utm_campaign != null && qs.utm_source == "loangate" ) {
+		var wmid = qs.utm_campaign;
+	} else if (qs.w_id != null) {
+		var wmid = qs.w_id;	
+	} else if (qs.publisher != null) {
+		var wmid = qs.publisher;	
+	} else { 
+		var wmid = qs.utm_source +" is not defined";
+	}
+  var doc_ref;
+  doc_ref = document.referrer.split('/')[2];
+	ga('send', 'pageview', 
+		{'dimension1': wmid,
+     'dimension3': document.referrer,
+     'dimension4': doc_ref}); 
+	console.log(wmid);
+  console.log(document.referrer);
+  console.log(doc_ref)
+} 
+	else { 
+		ga('send', 'pageview'); 
+		console.log("no affiliate") 
+	}
+
+
+ 
+ 
+</script>
+
+
+
+
+<!-- DOM ready event for GA User ID -->
+<script>
+(function(funcName, baseObj) {
+    // The public function name defaults to window.docReady
+    // but you can pass in your own object and own function name and those will be used
+    // if you want to put them in a different namespace
+    funcName = funcName || "docReady";
+    baseObj = baseObj || window;
+    var readyList = [];
+    var readyFired = false;
+    var readyEventHandlersInstalled = false;
+
+    // call this when the document is ready
+    // this function protects itself against being called more than once
+    function ready() {
+        if (!readyFired) {
+            // this must be set to true before we start calling callbacks
+            readyFired = true;
+            for (var i = 0; i < readyList.length; i++) {
+                // if a callback here happens to add new ready handlers,
+                // the docReady() function will see that it already fired
+                // and will schedule the callback to run right after
+                // this event loop finishes so all handlers will still execute
+                // in order and no new ones will be added to the readyList
+                // while we are processing the list
+                readyList[i].fn.call(window, readyList[i].ctx);
+            }
+            // allow any closures held by these functions to free
+            readyList = [];
+        }
+    }
+
+    function readyStateChange() {
+        if ( document.readyState === "complete" ) {
+            ready();
+        }
+    }
+
+    // This is the one public interface
+    // docReady(fn, context);
+    // the context argument is optional - if present, it will be passed
+    // as an argument to the callback
+    baseObj[funcName] = function(callback, context) {
+        if (typeof callback !== "function") {
+            throw new TypeError("callback for docReady(fn) must be a function");
+        }
+        // if ready has already fired, then just schedule the callback
+        // to fire asynchronously, but right away
+        if (readyFired) {
+            setTimeout(function() {callback(context);}, 1);
+            return;
+        } else {
+            // add the function and context to the list
+            readyList.push({fn: callback, ctx: context});
+        }
+        // if document already ready to go, schedule the ready function to run
+        if (document.readyState === "complete") {
+            setTimeout(ready, 1);
+        } else if (!readyEventHandlersInstalled) {
+            // otherwise if we don't have event handlers installed, install them
+            if (document.addEventListener) {
+                // first choice is DOMContentLoaded event
+                document.addEventListener("DOMContentLoaded", ready, false);
+                // backup is window load event
+                window.addEventListener("load", ready, false);
+            } else {
+                // must be IE
+                document.attachEvent("onreadystatechange", readyStateChange);
+                window.attachEvent("onload", ready);
+            }
+            readyEventHandlersInstalled = true;
+        }
+    }
+})("docReady", window);
+
+</script>
+<!--END DOM ready event for GA User ID -->
+
+<!-- Google analytics send user ID -->
+
+<!-- Emarsys script -->
+
+<script type="text/javascript">
+var ScarabQueue = ScarabQueue || [];
+(function(id) {
+  if (document.getElementById(id)) return;
+  var js = document.createElement('script'); js.id = id;
+  js.src = '//cdn.scarabresearch.com/js/14E27D10BA1EC468/scarab-v2.js';
+  var fs = document.getElementsByTagName('script')[0];
+  fs.parentNode.insertBefore(js, fs);
+})('scarab-js-api');
+</script>
+<!-- END Emarsys script -->
+
+
+<!-- Emarsys DOM READY scripts -->
+<script> 
+  docReady(function() {
+//        console.log( "document loaded" );
+//        console.log( user_id );  
+if (typeof user_id !== 'undefined') { 
+  ScarabQueue.push(['setCustomerId', user_id]);
+};
+ScarabQueue.push(['view',document.URL]);
+ScarabQueue.push(['go']);
+
+});
+</script>
+
+<!-- END OF Emarsys DOM READY scripts -->
+    <link rel="manifest" href="/manifest.json" />
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "fe92f41c-fbbf-4b1e-8673-486b6f90fc39",
+    });
+  });
+</script>
+    <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NVQTK8N');</script>
+<!-- End Google Tag Manager -->
+    
+        
+        <script type="application/ld+json">
+        {
+            "@type" : "LocalBusiness",
+            "@context" : "http://schema.org",
+            "url" : "https://www.dinero.ua",
+            "legalName" : "Dinero.ua",
+            "name" : "Dinero.ua",
+            "image" : "https://www.dinero.ua/img/dinero-logo.png",
+            "email": "info@dinero.ua",
+            "aggregateRating": {
+            "@type": "AggregateRating",
+                "ratingValue": "4.92",
+                "reviewCount": "36",
+                "bestRating" : "5"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                        {
+                            "@type" : "DayOfWeek",
+                            "name" : "Пн-Вс: 00:00 - 23:59"
+                        }
+                    ]
+                }
+            ]
+        }
+    </script>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NVQTK8N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<div id="ver_mob" class="hidden-dttab"></div>
+<div id="ver_tabp" class="hidden-mob hidden-dt hidden-tabl"></div>
+<div id="ver_tabl" class="hidden-mob hidden-dt hidden-tabp"></div>
+
+<div id="page">
+    <div class="mobmenu_bg"></div>
+                <div class="top_original_position">
+        <div class="top_movable">
+            <div class="header_original_position">
+    <header>
+        <div class="line1">
+            <div class="wrap tabp_unwrap mob_unwrap">
+                <div class="mobile-header">
+
+                                <div class="left">
+                    <div class="mobmenu_trigger general mobmenu_trigger_openclose hidden-dt hidden-tabl"></div>
+                </div>
+
+                <div class="center">
+                    <div class="_left pml30 mml15 mr20">
+                        <div class="sp22 msp15"></div>
+                        <a title="Ukrpozyka.com.ua" href="/" class="logo"><img alt="Ukrpozyka.com.ua" src="/img/logo/logo.svg" class="wh_196_40 mwh_147_30"></a>
+                        <div class="sp22 msp15"></div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="_right hidden-tabp hidden-mob ml10">
+                        <div class="sp24"></div>
+                        <div class="lang_cont"><div class="trigger">ua</div><div class="expand"><div class="lang">ua</div><a href="/lang/ru" class="lang">ru</a></div></div>                        <div class="sp24 c"></div>
+                    </div>
+                    <!-- main navigation menu start -->
+                                                <div class="_right hidden-tabp hidden-mob ml30">
+                    <div class="sp24"></div>
+                <div class="login_dropdown_background hidden"></div>
+        <div class="login_cont">
+                                                                                                                <a title="Мiй кабiнет" href="/avtorizacija/avtorizacija-isnuyuchogo-klienta" class="btn light-blue not_logged mnw80 plr10">Мiй кабiнет</a>
+                                    </div>
+                    <div class="sp24 c"></div>
+        
+    </div>
+
+
+    <div class="_right hidden-tabp hidden-mob">
+        <nav class="menu1">
+                            <div class="header_menu1_item"><a href="/yak-tse-pratsyuye" class="link" title="Як це працює?">Як це працює?</a></div>
+                            <div class="header_menu1_item"><a href="/kontakti" class="link" title="Контакти">Контакти</a></div>
+                            <div class="header_menu1_item"><a href="/storinka/blog" class="link" title="Блог">Блог</a></div>
+                            <div class="header_menu1_item"><a href="/chasti-pitanniya" class="link" title="Довідка">Довідка</a></div>
+                    </nav>
+    </div>
+
+                                        <!-- main navigation menu end -->
+
+                                        <a href="/avtorizacija/avtorizacija-isnuyuchogo-klienta" class="mobmenu_trigger_logged logged  hidden-dt hidden-tabl"></a>
+                                    </div>
+                                </div>
+        </div>
+    </div>
+    </header>
+    </div>
+
+
+    <!-- mobile navigation menu start -->
+            <div class="mob_menu_original_position">
+    <div class="mobmenu_bg"></div>
+    <div class="mob_menu dark">
+        <div class="mob_menu_cont general">
+                            <div class="menu1">
+                                            <a title="Як це працює?" href="/yak-tse-pratsyuye" class="link">Як це працює?</a>
+                                            <a title="Контакти" href="/kontakti" class="link">Контакти</a>
+                                            <a title="Блог" href="/storinka/blog" class="link">Блог</a>
+                                            <a title="Довідка" href="/chasti-pitanniya" class="link">Довідка</a>
+                                    </div>
+                        <div class="lang_cont">
+                <div class="lang_cont"><a title="" href="/lang/ua" class="lang active"><div class="inner">UA</div></a><a title="" href="/lang/ru" class="lang"><div class="inner">RU</div></a></div>            </div>
+        </div>
+                                </div>
+</div>        <!-- mobile navigation menu end -->
+
+    </div></div>
+
+    <div id="content" >
+
+        
+    <startpage-content language="ua">
+        <promoslider>
+            <calculator translations="{&quot;\u041f\u0435\u0440\u0432\u044b\u0439 \u0437\u0430\u0435\u043c&quot;:&quot;\u041f\u0435\u0440\u0432\u044b\u0439 \u0437\u0430\u0435\u043c&quot;,&quot;\u041f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0439&quot;:&quot;\u041f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0439&quot;,&quot;\u0421\u0443\u043c\u043c\u0430 \u0437\u0430\u0439\u043c\u0430&quot;:&quot;\u0421\u0443\u043c\u0430 \u043f\u043e\u0437\u0438\u043a\u0438&quot;,&quot;\u0421\u0440\u043e\u043a \u0437\u0430\u0439\u043c\u0430&quot;:&quot;\u0421\u0442\u0440\u043e\u043a \u043f\u043e\u0437\u0438\u043a\u0438&quot;,&quot;\u0434\u043d\u0435\u0439&quot;:&quot;\u0434\u043d\u0456\u0432&quot;,&quot;Payment date&quot;:&quot;\u0414\u0430\u0442\u0430 \u043f\u043b\u0430\u0442\u0435\u0436\u0443 &quot;,&quot;Monthly payment&quot;:&quot;\u041c\u0456\u0441\u044f\u0447\u043d\u0438\u0439 \u043f\u043b\u0430\u0442\u0456\u0436&quot;,&quot;Payment schedule&quot;:&quot;\u0413\u0440\u0430\u0444\u0456\u043a \u043f\u043b\u0430\u0442\u0435\u0436\u0456\u0432&quot;,&quot;Cashback amount&quot;:&quot;\u041a\u0435\u0448\u0431\u0435\u043a&quot;,&quot;Interest amount&quot;:&quot;\u0412\u0456\u0434\u0441\u043e\u0442\u043a\u0438&quot;,&quot;Total payment&quot;:&quot;\u0412\u0441\u044c\u043e\u0433\u043e \u0434\u043e \u0441\u043f\u043b\u0430\u0442\u0438&quot;,&quot;Repayment date&quot;:&quot;\u0414\u0430\u0442\u0430 \u0441\u043f\u043b\u0430\u0442\u0438&quot;,&quot;Did you know? You can extend your installment loan&quot;:&quot;\u0412\u0438 \u0437\u043d\u0430\u043b\u0438? \u0412\u0438 \u043c\u043e\u0436\u0435\u0442\u0435 \u043f\u043e\u0434\u043e\u0432\u0436\u0438\u0442\u0438 \u0441\u0442\u0440\u043e\u043a \u0412\u0430\u0448\u043e\u0457 \u043f\u043e\u0437\u0438\u043a\u0438&quot;,&quot;Apply now&quot;:&quot;\u041f\u043e\u0434\u0430\u0442\u0438 \u0437\u0430\u044f\u0432\u043a\u0443&quot;,&quot;months&quot;:&quot;\u041c\u0456\u0441.&quot;,&quot;min_loan_num_req_general&quot;:&quot;\u0426\u044f \u0441\u0443\u043c\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u0430 \u0442\u0456\u043b\u044c\u043a\u0438 \u0434\u043b\u044f \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u043e\u0457 \u043f\u043e\u0437\u0438\u043a\u0438&quot;,&quot;First loan&quot;:&quot;\u041f\u0435\u0440\u0448\u0430 \u043f\u043e\u0437\u0438\u043a\u0430&quot;,&quot;Repeated loan&quot;:&quot;\u041f\u043e\u0432\u0442\u043e\u0440\u043d\u0430&quot;,&quot;\u0441\u0435\u043a\u0443\u043d\u0434\u0430&quot;:&quot;\u0441\u0435\u043a\u0443\u043d\u0434\u0430&quot;,&quot;\u0441\u0435\u043a\u0443\u043d\u0434&quot;:&quot;\u0441\u0435\u043a\u0443\u043d\u0434&quot;,&quot;\u0441\u0435\u043a\u0443\u043d\u0434\u044b&quot;:&quot;\u0441\u0435\u043a\u0443\u043d\u0434\u044b&quot;,&quot;Review and Approval fee&quot;:&quot;Review and Approval fee&quot;,&quot;calc_label_review_and_approval_fee&quot;:&quot;calc_label_review_and_approval_fee&quot;,&quot;calc_label_interest&quot;:&quot;calc_label_interest&quot;,&quot;Become a new customer and get 7% less by taking!&quot;:&quot;\u0421\u0442\u0430\u043d\u044c \u043d\u043e\u0432\u0438\u043c \u043a\u043b\u0456\u0454\u043d\u0442\u043e\u043c \u0442\u0430 \u0432\u0456\u0434\u0434\u0430\u0432\u0430\u0439 \u043d\u0430 7% \u043c\u0435\u043d\u0448\u0435 \u043d\u0456\u0436 \u0432\u0437\u044f\u0432.&quot;,&quot;Hurry up get cashback!&quot;:&quot;\u041f\u043e\u0441\u043f\u0456\u0448\u0430\u0439\u0442\u0435 \u043e\u0442\u0440\u0438\u043c\u0430\u0442\u0438 \u043a\u0435\u0448\u0431\u0435\u043a!&quot;,&quot;Until the end of the cashback left&quot;:&quot;\u0414\u043e \u043a\u0456\u043d\u0446\u044f \u043a\u0435\u0448\u0431\u0435\u043a\u0430 \u0437\u0430\u043b\u0438\u0448\u0438\u043b\u043e\u0441\u044f:&quot;,&quot;The cashback promotion applies only to new customers.&quot;:&quot;\u0410\u043a\u0446\u0456\u044f \u043a\u0435\u0448\u0431\u0435\u043a \u043f\u043e\u0448\u0438\u0440\u044e\u0454\u0442\u044c\u0441\u044f \u0442\u0456\u043b\u044c\u043a\u0438 \u043d\u0430 \u043d\u043e\u0432\u0438\u0445 \u043a\u043b\u0456\u0454\u043d\u0442\u0456\u0432.&quot;}"></calculator>
+        </promoslider>
+    </startpage-content>
+
+    <global-footer></global-footer>
+
+    </div>
+
+    
+</div>
+
+
+
+<div class="popup_bg tmff_bg" style="display: none"></div>
+<section class="tmff_popup_cont popup_cont" style="display: none">
+    <section class="popup">
+        <div class="sp80 msp0"></div>
+        <div class="block bg_white mnocont w475 plr39 shadow3 mw290 rad4 _mid mplr0 mnocont no_close _rel mob_sta">
+            <div class="tmff-popup mxw750 _mid">
+                <div class="popup_close popup-close"></div>
+                <div class="sp32 msp24"></div>
+                <h2 class="fs3036 mfs2429">Бери більше – повертай на 7% менше</h2>
+                <div class="sp32 msp24"></div>
+                <div>
+                    Сервіс Укрпозика дбає про своїх клієнтів, тому запускає унікальний для сфери мікрокредитування проект.                      Його суть дуже проста: «Бери більше – повертай на 7% менше».                     Наш продукт працює за принципом часткового прощення боргу добросовісному Позичальнику.                     Учаснику акції, який своєчасно повернув 93% боргу Організатор прощає залишок такого боргу у розмірі 7% від суми отриманої Позичальником – Учасником акції. Наприклад, якщо Учасник бере 10 000 грн та з урахуванням вимог цих Правил вносить оплату у терміни зазначені в Угоді між Організатором та Учасником, то до сплати він має внести 9 300 грн.                 </div>
+                <div class="sp21 msp14"></div>
+                <div> При цьому перша позика для нового Учасника під 0%.</div>
+                <div class="sp21 msp14"></div>
+                <div>Условия акции:</div>
+                <ul>
+                    <li>Бути новим клієнтом компанії</li>
+                    <li>Зарегистрироваться на оформление первого займа на нашем сайте : https://Ukrpozyka.com.ua</li>
+                    <li>Есть возможность воспользоваться займом 3 раза (по 30 дней займ ); 6 раз( по 14) и 12 раз( по 7), а также в любой комбинации этих сроков.</li>
+                    <li>Подать заявку на сумму, которая вам необходима.</li>
+                    <li>Доборы свободных средств - также под 0%</li>
+                    <li>Для взяття нової позики необхідно погасити попередню та повторити все покроково знову.</li>
+                    <li>Період проведення акції з 09.11. по 31.12.2019.</li>
+                    <li>Дія часткового прощення боргу Учаснику не розповсюджується на добори у межах кредитного ліміту. Учасник має повернути повну суму добору вільних коштів. </li>
+                    <li>Пролонгація за безкоштовною позикою за бажанням Учасника проводиться на платній основі. Вартість пролонгації розраховується від повної суми позики. При цьому принцип часткового прощення боргу Учаснику продовжує діяти. </li>
+                    <li>Погашення позики рахується з дати зарахування коштів на рахунок Організатора, а не з дати внесення платежу Учасником. </li>
+                </ul>
+                <div class="sp21 msp14"></div>
+                <div>З Ukrpozyka – можеш собі дозволити! </div>
+                <div class="sp40"></div>
+            </div>
+        </div>
+        <div class="sp60 msp0"></div>
+    </section>
+</section>
+
+<script type="text&#x2F;javascript" src="&#x2F;cache&#x2F;b339cddbfd28c41b56bf04f33e7269b6.min.js&#x3F;t&#x3D;1576169369&amp;v&#x3D;293"></script>
+    <!-- {literal} -->
+        <script type='text/javascript'>
+        window['li'+'v'+'eTe'+'x'] = true,
+        window['live'+'Te'+'xI'+'D'] = 163756,
+        window['liv'+'eTex_o'+'bject'] = true;
+	window.ltLang= 'ua';
+        (function() {
+        var t = document['creat'+'eE'+'l'+'e'+'ment']('script');
+        t.type ='text/javascript';
+        t.async = true;
+        t.src = '//'+'cs15.liv'+'etex.ru/js/'+'client.js';
+        var c = document['getE'+'lements'+'ByTagNa'+'me']('script')[0];
+        if ( c ) c['pa'+'r'+'ent'+'No'+'de']['inse'+'rt'+'Be'+'f'+'or'+'e'](t, c);
+        else document['documen'+'tE'+'lement']['f'+'irs'+'t'+'Ch'+'ild']['appen'+'d'+'Chi'+'ld'](t);
+        })();
+        </script>
+        <!-- {/literal} --><div id="clickfrog_counter_container" style="width:0px;height:0px;overflow:hidden;"></div>
+<script type="text/javascript">(function(d, w) {var clickfrog = function() {if(!d.getElementById('clickfrog_js_container')) {var sc = document.createElement('script');sc.type = 'text/javascript';sc.async = true;sc.src = "//stat.clickfrog.ru/c.js?r="+Math.random();sc.id = 'clickfrog_js_container';var c = document.getElementById('clickfrog_counter_container');c.parentNode.insertBefore(sc, c);}};if(w.opera == "[object Opera]"){d.addEventListener("DOMContentLoaded",clickfrog,false);}else {clickfrog();}})(document, window);</script>
+<noscript><div style="width:0px;height:0px;overflow:hidden;"><img src="//stat.clickfrog.ru/no_script.php?img" style="width:0px; height:0px;" alt=""/></div></noscript>
+<script type="text/javascript">var clickfrogru_uidh='ce5e00e1086b4f5d2fea8b061e833231';</script>
+
+
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"c625dd2f80","applicationID":"124669967","transactionName":"b10GZkVXCxFVUE0KVlYXJVFDXwoMG0FWDE0=","queueTime":0,"applicationTime":363,"atts":"QxoFEA1NGB8=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
